@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.security.Timestamp;
 
@@ -30,6 +31,6 @@ public class Todo {
     @CreationTimestamp
     @Column(updatable = false)
     Timestamp timestamp;
-    @UpdatedTimestamp;
+    @UpdateTimestamp
     Timestamp updatedTimestamp;
 }
