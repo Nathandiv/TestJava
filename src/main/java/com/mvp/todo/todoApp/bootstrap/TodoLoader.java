@@ -1,6 +1,5 @@
 package com.mvp.todo.todoApp.bootstrap;
 
-
 import com.mvp.todo.todoApp.model.Todo;
 import com.mvp.todo.todoApp.model.TodoStatus;
 import com.mvp.todo.todoApp.repositories.TodoRepository;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TodoLoader implements CommandLineRunner {
-
     public final TodoRepository todoRepository;
 
     public TodoLoader(TodoRepository todoRepository) {
@@ -40,5 +38,4 @@ public class TodoLoader implements CommandLineRunner {
             System.out.println("Sample Todos Loaded");
         }
     }
-
 }

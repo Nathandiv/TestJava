@@ -8,33 +8,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TodoServiceImpl implements TodoService  {
-
+public class TodoServiceImpl implements TodoService{
     TodoRepository todoRepository;
 
-    public TodoServiceImpl(TodoRepository todoRepository) {
+    public TodoServiceImpl(TodoRepository todoRepository){
         this.todoRepository = todoRepository;
     }
 
     @Override
-    public List<Todo> getTodos() {
+    public List<Todo> getTodos(){
         List<Todo> todos = new ArrayList<>();
         todoRepository.findAll().forEach(todos::add);
         return todos;
     }
 
     @Override
-    public Todo getTodoById(Long id) {
+    public Todo getTodoById(Long id){
         return todoRepository.findById(id).get();
     }
 
     @Override
-    public Todo insert(Todo todo) {
+    public Todo insert(Todo todo){
         return todoRepository.save(todo);
     }
 
     @Override
-    public void updateTodo(Long id, Todo todo) {
+    public void updateTodo(Long id, Todo todo){
         Todo todoFromDb = todoRepository.findById(id).get();
         System.out.println(todoFromDb.toString());
         todoFromDb.setTodoStatus(todo.getTodoStatus());
@@ -44,9 +43,9 @@ public class TodoServiceImpl implements TodoService  {
     }
 
     @Override
-    public void deleteTodo(Long todoId) {
+    public void deleteTodo(Long todoId){
         todoRepository.deleteById(todoId);
-    }
 
+    }
 
 }
